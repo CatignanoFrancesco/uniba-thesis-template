@@ -1,8 +1,13 @@
 %!TEX program = lualatex
 
-%---------------------
-% FILE PRINCIPALE
-%---------------------
+%------------------------------------------------
+% PARTE 1 - IMPOSTAZIONI GENERALI DEL DOCUMENTO
+% In questa parte ci sono i pacchetti LaTeX
+% utilizzati, il carattere e la dimensione
+% del testo. Vi è anche la definizione
+% linguaggio JSON quando si scrive testo che
+% deve essere formattato in questo linguaggio
+%------------------------------------------------
 
 
 \documentclass[10pt, titlepage]{report}
@@ -40,6 +45,7 @@
 \definecolor{delim}{RGB}{20,105,176}
 \colorlet{numb}{magenta!60!black}
 
+% Definizione JSON
 \lstdefinelanguage{json}{
 	basicstyle=\normalfont\ttfamily,
 	numberstyle=\scriptsize,
@@ -67,3 +73,10 @@
 	{[}{{{\color{delim}{[}}}}{1}
 	{]}{{{\color{delim}{]}}}}{1},
 }
+
+
+%--------------------------------------------------
+% PARTE 2 - IMPOSTAZIONI SPECIFICHE DEL DOCUMENTO
+% In questa parte ci sono il titolo,
+% il frontespizio, i capitoli e la bibliografia
+%--------------------------------------------------
