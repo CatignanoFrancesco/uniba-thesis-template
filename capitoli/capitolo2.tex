@@ -2,6 +2,31 @@
 In questo capitolo verranno spiegati tutti i comandi per inserire codice, tabelle di varie dimensioni, elenchi, immagini ecc.
 
 
+\section{Liste}
+Le liste possono essere sia numerate che puntate. La prima lista mostra come si scrivono alcuni caratteri e come si definisce lo stile di scrittura:
+\begin{itemize}
+    \item si può scrivere in \textbf{grassetto};
+    \item si può scrivere in \textit{corsivo};
+    \item si può inserire il carattere \& per la e commerciale;
+    \item si può inserire il carattere \_ per l'underscore;
+\end{itemize}
+
+Ci sono anche gli elenchi numerati classici:
+\begin{enumerate}
+    \item primo elemento;
+    \item secondo elemento;
+    \item terzo elemento.
+\end{enumerate}
+
+Ma anche gli elenchi in numeri romani:
+\begin{enumerate}[I]    % sostituendo 'I' con 'i' l'elenco sarà con i numeri romani minuscoli.
+    \item primo elemento in romano;
+    \item secondo elemento in romano;
+    \item terzo elemento in romano;
+    \item quarto elemento in romano.
+\end{enumerate}
+
+
 \section{Immagini}
 Durante la produzione del testo può essere utile avere un'immagine o una serie di immagini.
 
@@ -79,3 +104,44 @@ Quella che segue è una tabella più grande e adattata alla pagina, in modo da e
 	\caption{Tabella grande}
 	\label{capitolo2:tabellaGrande}
 \end{table}
+
+
+\section{Codice}
+Qui verranno mostrati due esempi di codice sia in Python che in JSON.
+
+\begin{lstlisting}[language=json, basicstyle=\small, caption={Esempio JSON}, label=capitolo2:code:json]
+{
+  "nome": "John Doe",
+  "eta": 30,
+  "professione": "Ingegnere",
+  "indirizzo": {"via": "Via delle Rose, 123", "citta": "Città del Sole", "cap": "12345"},
+  "interessi": ["musica", "viaggi", "sport"],
+  "esperienze_lavorative": [{"azienda": "ABC Inc.", "posizione": "Sviluppatore software", "periodo": "2010-2015"}, {"azienda": "XYZ Corp.", "posizione": "Project Manager", "periodo": "2015-2020"}],
+  "lingue": {"inglese": "fluente", "italiano": "madrelingua", "spagnolo": "intermedio"},
+  "referenze": null,
+  "disponibile": true
+}
+\end{lstlisting}
+
+Ecco un esempio del linguaggio Python.
+
+\begin{lstlisting}[language=python, basicstyle=\small, caption={Esempio Python}, label=capitolo2:code:python]
+def somma(a, b):
+return a + b
+
+numero1 = 5
+numero2 = 7
+
+risultato = somma(numero1, numero2)
+print("La somma di", numero1, "e", numero2, "è:", risultato)
+
+\end{lstlisting}
+
+
+\section{Formule matematiche}
+È possibile inserire formule matematiche durante il testo e ce ne sono di due tipi. La prima si inserisce all'interno del testo: $f(x) = \frac{x^2}{2}$, mentre il secondo si inserisce in una nuova riga.
+\begin{equation}
+    \sum_{i=0}^{\infty} \alpha\sin{x_i}
+    \label{capitolo2:eq:esempioEquazione}
+\end{equation}
+Anche in questo caso, tramite la label, è possibile fare riferimento a questa formula in qualsiasi punto del documento, esattamente come per immagini, tabelle e codice.
