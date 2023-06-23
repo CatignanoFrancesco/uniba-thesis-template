@@ -28,7 +28,7 @@
 \usepackage{enumerate}
 
 
-%Impostazioni testo
+% Impostazioni testo
 \usepackage{geometry}
  \geometry{
  	a4paper,
@@ -42,7 +42,7 @@
 \linespread{1.5}
 
 
-%Impostazioni
+% Impostazioni
 \newcommand*{\chapterpath}{capitoli}
 \graphicspath{ {img/} }
 
@@ -61,24 +61,37 @@
 	breaklines=true
 }
 
+% Comandi universali
+\newcommand*{\blankpage}{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage
+}
+
 
 
 %--------------------------------------------------
 % PARTE 2 - IMPOSTAZIONI SPECIFICHE DEL DOCUMENTO
 % In questa parte ci sono il titolo,
 % il frontespizio, i capitoli e la bibliografia
+% ed in generale la struttura del documento
 %--------------------------------------------------
 
-%Titolo
+% Titolo
 \title{Titolo della tesi}
 \author{Nome e cognome}
 \date{01/01/2000}
 
-%Documento
+% Documento
 \begin{document}
 
 % Frontespizio
 \input{front}
+
+\blankpage	% Pagina vuota
+\input{capitoli/dedica}
+\blankpage
 
 % Abstract
 \selectlanguage{english}
@@ -86,11 +99,19 @@
 \include{abstract}
 \selectlanguage{italian}
 
-%Indice
+% Indice
 \tableofcontents
 
 % Capitoli
 \include{capitoli/capitolo1}
 \include{capitoli/capitolo2}
+
+% Conclusioni
+\setcounter{secnumdepth}{-1}	% serve a non inserire il numero nel capitolo. Si può fare la stessa cosa per ringraziamenti e altro
+\include{capitoli/conclusioni}
+
+% Bibliografia
+\bibliographystyle{plain}
+\bibliography{bibliography}	% Qui vanno tutte le citazioni in formato bibtex. Per citare usare il comando \cite{id citazione}
 
 \end{document}
