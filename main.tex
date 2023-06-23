@@ -90,7 +90,7 @@
 \input{front}
 
 \blankpage	% Pagina vuota
-\input{capitoli/dedica}
+\include{capitoli/dedica}
 \blankpage
 
 % Abstract
@@ -103,12 +103,18 @@
 \tableofcontents
 
 % Capitoli
+\include{capitoli/introduzione}
 \include{capitoli/capitolo1}
 \include{capitoli/capitolo2}
 
 % Conclusioni
-\setcounter{secnumdepth}{-1}	% serve a non inserire il numero nel capitolo. Si può fare la stessa cosa per ringraziamenti e altro
+\setcounter{secnumdepth}{-1}	% serve a non inserire il numero nel capitolo
 \include{capitoli/conclusioni}
+
+% Ringraziamenti
+\blankpage
+\setcounter{secnumdepth}{-1}
+\include{capitoli/ringraziamenti}
 
 % Bibliografia
 \bibliographystyle{plain}
